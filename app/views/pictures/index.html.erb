@@ -1,39 +1,78 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
-        <span class="sr-only">Bootstrap</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Bootstrap
-      </a>
-    </div>
-    <div id="gnavi" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="">top</a></li>
-        <li><a href="">menu1</a></li>
-        <li><a href="">menu2</a></li>
+<header class="header"></header>
+<div class="wrapper clearfix">　
+    <aside class="side_menu">
+      <ul>
+        <li><span class="glyphicon glyphicon-user color-white"></span>竹澤美紀</li>
+        <li><span class="glyphicon glyphicon-list color-blue"></span>ニュース</li>
+        <li><span class="glyphicon glyphicon-flash color-blue"></span>Messenger</li>
+        <li><span class="glyphicon glyphicon-expand color-blue"></span>Watch</li>
+        <li>発見</li>
+        <li><span class="glyphicon glyphicon-rub color-blue"></span>ようこそ</li>
+        <li><span class="glyphicon glyphicon-heart color-pink"></span>新型コロナウイルス</li>
+        <li><span class="glyphicon glyphicon-flag color-orange"></span>ページ</li>
+        <li><span class="glyphicon glyphicon-calendar color-red"></span>イベント</li>
+        <li><span class="glyphicon glyphicon-globe color-blue"></span>グループ</li>
+        <li><span class="glyphicon glyphicon-triangle-bottom"></span>もっと見る<span class="glyphicon glyphicon-option-horizontal"></span></li>
       </ul>
-    </div>
-  </div>
-</nav>
-<table>
-  <tr>
-    <th>画像</th>
-    <th>内容</th>
-    <th>投稿者</th>
-  </tr>
-  <% @pictures.each do |picture| %>
-  <tr>
-    <td><%= picture.image %></td>
-    <td><%= picture.content %></td>
-    <td><%= picture.user.name %></td>
-    <td><%= link_to "メッセージの詳細を確認する",picture_path(picture.id) %></td>
-    <td><%= link_to "メッセージを編集する",edit_picture_path(picture.id) %></td>
-    <td><%= link_to 'メッセージを削除する', picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-  <% end %>
-</table>
-<%= link_to "メッセージを作成する",new_picture_path %>
+    </aside>
+    <article class="content">
+      <div class="panel panel-default">
+        <div class="panel-heading">投稿を作成</div>
+        <div class="panel-body">
+          <p>竹澤美紀さん、その気持ちシェアしよう</p>
+        </div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="glyphicon glyphicon-camera color-blue">動画・写真</span><span class="caret"></span>
+                </button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="glyphicon glyphicon-user color-blue">チェックイン</span><span class="caret"></span>
+                </button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="glyphicon glyphicon-map-maker color-blue">友達をタグ付け</span><span class="caret"></span>
+                </button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="glyphicon glyphicon-option-horizontal"></span><span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div></li>
+          </ul>
+        </div>
+          <p>ストーリーズに追加
+          写真や動画をシェア、または何か書く</p>
+          <div class="panel panel-default">
+            <div class="panel panel-default">
+              <div class="panel-heading">竹澤美紀</div>
+                <table class="table">
+                  <tr>
+                    <th>タイトル</th>
+                    <th>内容</th>
+                    <th>投稿者</th>
+                  </tr>
+                  <% @pictures.each do |picture| %>
+                  <tr>
+                    <td><%= picture.image %></td>
+                    <td><%= picture.content %></td>
+                    <td><%= picture.user.name %></td>
+                  </tr>
+                  <% end %>
+                  </table>
+                </div>
+    </article>
+    <aside class="side_menu2">
+      <div class="topic">
+        <p>日本語・English(US)・Espanol・<br>
+           Portugues(Brasil)・France
+         <span class="glyphicon glyphicon-plus"></span></p>
+      <div class="topic2">
+        プライバシー・規約・広告・Adchoice<span class="glyphicon glyphicon-triangle-right"></span><br>
+        Cookie・その他<br>
+        Macebook © 2020
+    </aside>

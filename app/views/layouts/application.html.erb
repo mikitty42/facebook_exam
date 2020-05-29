@@ -23,8 +23,6 @@
         <li><%= link_to "Profile", user_path(current_user.id) %></li>
         <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
       <% else %>
-
-
         <li><%= link_to "竹澤美紀", new_session_path %></li>
         <li><a href="#">ホーム</a></li>
         <li><a href="#">友達を検索</a></li>

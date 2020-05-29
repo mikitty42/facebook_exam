@@ -1,16 +1,19 @@
 class PicturesController < ApplicationController
-  before_action :set_pucture, only: [:show,:edit,:update,:destroy]
+  before_action :set_picture, only: [:show,:edit,:update,:destroy]
   def index
     @pictures = Picture.all
   end
 
   def new
-    @picture = Picture.new
+    if params[:back]
+      @picture = Picture.new(picture_params)
+    else
+      @picture = Picture.new
+    end
   end
 
   def create
-    @picture = Picture.new(picture_params)
-    @picture.user_id = current_user.id
+    @picture = current_user.pictures.build(picture_params)
     if params[:back]
       render :new
     else
@@ -42,8 +45,7 @@ class PicturesController < ApplicationController
   end
 
   def confirm
-    @picture = Picture.new(picture_params)
-    @picture.user_id = current_user.id
+    @picture = current_user.pictures.build(picture_params)
     render :new if @picture.invalid?
   end
 

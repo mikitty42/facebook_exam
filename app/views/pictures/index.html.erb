@@ -61,10 +61,14 @@
                     <td><%= picture.image %></td>
                     <td><%= picture.content %></td>
                     <td><%= picture.user.name %></td>
+                    <td><%= link_to "詳細",picture_path(picture.id) %></td>
+                    <td><%= link_to "編集",edit_picture_path(picture.id) %></td>
+                    <td><%= link_to '削除',picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
                   </tr>
                   <% end %>
-                  </table>
+                </table>
                 </div>
+                <%= link_to "投稿する",new_picture_path %>
     </article>
     <aside class="side_menu2">
       <div class="topic">

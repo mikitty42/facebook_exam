@@ -23,15 +23,15 @@
         <li><%= link_to "Profile", user_path(current_user.id) %></li>
         <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
       <% else %>
-        <li><%= link_to "竹澤美紀", new_session_path %></li>
+        <li><%= link_to "Log in", new_session_path %></li>
+        <li><%= link_to "Sign up", new_user_path %></li>
+      <% end %>
         <li><a href="#">ホーム</a></li>
         <li><a href="#">友達を検索</a></li>
-        <li><%= link_to "作成", new_user_path %></li>
         <li><a href="#"><span class="glyphicon glyphicon-user color-black"></span></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-flash color-black"></span></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-bell color-black"></span></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-triangle-bottom color-black"></span></a></li>
-        <% end %>
     </ul>
   </header>
     <% flash.each do |key,value| %>

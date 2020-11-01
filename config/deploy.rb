@@ -1,6 +1,6 @@
 lock '3.6.0'
 # デプロイするアプリケーション名
-set :application, 'achieve'
+set :application, 'macebook'
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
 set :repo_url, 'https://github.com/mikitty42/facebook_exam'

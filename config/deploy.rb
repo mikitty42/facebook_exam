@@ -3,7 +3,7 @@ lock '3.6.0'
 set :application, 'achieve'
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/mikitty42/kadai-micropost'
+set :repo_url, 'https://github.com/mikitty42/facebook_exam'
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
 # deploy先のディレクトリ。
